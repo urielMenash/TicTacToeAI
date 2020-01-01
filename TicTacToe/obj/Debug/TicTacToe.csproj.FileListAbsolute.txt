@@ -32,3 +32,5 @@ C:\Users\menasheo\Documents\tictactoe\TicTacToe\TicTacToe\TicTacToe\obj\Debug\Ti
 C:\Users\menasheo\Documents\tictactoe\TicTacToe\TicTacToe\TicTacToe\obj\Debug\TicTacToe.pdb
 C:\Users\123\Downloads\TicTacToe Ready\TicTacToe\TicTacToe\obj\Debug\TicTacToe.exe
 C:\Users\123\Downloads\TicTacToe Ready\TicTacToe\TicTacToe\obj\Debug\TicTacToe.pdb
+C:\Users\123\Downloads\TicTacToeReady\TicTacToe\TicTacToe\obj\Debug\TicTacToe.exe
+C:\Users\123\Downloads\TicTacToeReady\TicTacToe\TicTacToe\obj\Debug\TicTacToe.pdb

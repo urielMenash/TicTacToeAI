@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+// This program was developed by Uriel
+//I hope you will enjoy!!
+//recommended: try to beat my algo! hahaha
 namespace TicTacToe
 {
     public partial class singlePlayer : Form
@@ -21,8 +23,10 @@ namespace TicTacToe
         public int s1 = 0;
         public int s2 = 0; //as PC
         public int sd = 0;
+		//see prev form's comments
         private void buttonClick(object sender, EventArgs e)
         {
+			//button received from function checking traps (forks), and more...
             Button rcv = new Button();
             Button button = (Button)sender;
             if (button.Text == "")
@@ -45,8 +49,10 @@ namespace TicTacToe
                 }
                 else
                 {
-                    if (turns % 2 ==1)
+					
+                    if (turns % 2 ==1) //means its pc's turn
                     {
+						//first: check if i can win
                         rcv = CheckToWin();
                         if (rcv.Text != "f")
                         {
@@ -54,7 +60,7 @@ namespace TicTacToe
                             MakeWin();
                             return;
                         }
-
+						//second: prevent oppenent from winning
                         rcv = CheckToLose();
                         if (rcv.Text != "f")
                         {
@@ -63,7 +69,7 @@ namespace TicTacToe
                             turns++;
                             return;
                         }
-
+						//third: if middle is free- put there (best spot)
                         if (btn11.Text == "")
                         {
                             btn11.Text = "O";
@@ -72,6 +78,8 @@ namespace TicTacToe
                             return;
                         }
                         else
+						//fourth: prevent trap! this is the coplexity of the algorithm.
+						//detect trap and block it
                         {
                             rcv = Fork();
                             if (rcv.Text != "f")
@@ -83,6 +91,7 @@ namespace TicTacToe
                             }
                             else
                             {
+								//corner is better than sides
                                 rcv = RandomCorner();
                                 if (rcv.Text != "f")
                                 {
@@ -93,7 +102,8 @@ namespace TicTacToe
                                 }
                                 else
                                 {
-                                    rcv = RandomCorner();
+									//just put somewhere
+                                    rcv = RandomGen();
                                     if (rcv.Text != "f")
                                     {
                                         rcv.Text = "O";
@@ -144,6 +154,7 @@ namespace TicTacToe
         {
             NewGame();
         }
+		//If we are here- means it's a tie match
         bool CheckDraw()
         {
             if (turns == 9)
@@ -162,6 +173,7 @@ namespace TicTacToe
             this.Close();
         }
         bool CheckWinner()
+		//See multiplayer's comments
         {
             if (btn00.Text == btn01.Text && btn02.Text == btn01.Text && btn00.Text != "")
                 return true;
@@ -190,7 +202,7 @@ namespace TicTacToe
             return false;
         }
         Button CheckToWin()
-        //meuzan
+        //Horizontal: detect pair "O" and the third is free. first row
         { 
             if (((btn00.Text == btn01.Text) &&( btn01.Text == "O")) && btn02.Text == "")
                 return btn02;
@@ -200,6 +212,7 @@ namespace TicTacToe
             else
                   if (((btn02.Text == btn01.Text) && (btn01.Text == "O")) && btn00.Text == "")
                 return btn00;
+		//Horizontal: detect pair "O" and the third is free. second row
             if (((btn10.Text == btn11.Text) && (btn11.Text == "O")) && btn12.Text == "")
                 return btn12;
             else
@@ -208,6 +221,7 @@ namespace TicTacToe
             else
                 if (((btn12.Text == btn11.Text) && (btn11.Text == "O")) && btn10.Text == "")
                 return btn10;
+		   //Horizontal: detect pair "O" and the third is free. third row
             if (((btn20.Text == btn21.Text) && (btn21.Text == "O")) && btn22.Text == "")
                 return btn22;
             else
@@ -217,7 +231,7 @@ namespace TicTacToe
                if (((btn22.Text == btn21.Text) && (btn21.Text == "O")) && btn20.Text == "")
                 return btn20;
 
-            //meunach
+            //Vertical. first col
             if (((btn00.Text == btn10.Text) && (btn10.Text == "O")) && btn20.Text == "")
                 return btn20;
             else
@@ -226,6 +240,7 @@ namespace TicTacToe
             else
          if (((btn20.Text == btn10.Text) && (btn10.Text == "O")) && btn00.Text == "")
                 return btn00;
+		  //Vertical. second col
             if (((btn01.Text == btn11.Text) && (btn11.Text == "O")) && btn21.Text == "")
                 return btn21;
             else
@@ -234,6 +249,7 @@ namespace TicTacToe
             else
                 if (((btn21.Text == btn11.Text) && (btn11.Text == "O")) && btn01.Text == "")
                 return btn01;
+			 //Vertical. third col
             if (((btn02.Text == btn12.Text) && (btn12.Text == "O")) && btn22.Text == "")
                 return btn22;
             else
@@ -242,7 +258,7 @@ namespace TicTacToe
             else
                if (((btn22.Text == btn12.Text) && (btn12.Text == "O")) && btn02.Text == "")
                 return btn02;
-            //alachson
+            //slant
             if (((btn00.Text == btn11.Text) && (btn11.Text == "O")) && btn22.Text == "")
                 return btn22;
             else if (((btn00.Text == btn22.Text) && (btn22.Text == "O")) && btn11.Text == "")
@@ -261,7 +277,7 @@ namespace TicTacToe
             return flag;
         }
         Button CheckToLose()
-        //meuzan
+        //Horizontal
         {
             if (((btn00.Text == btn01.Text) && (btn01.Text == "X"))&&btn02.Text=="")
                 return btn02;
@@ -288,7 +304,7 @@ namespace TicTacToe
                if (((btn22.Text == btn21.Text) && (btn21.Text == "X")) && btn20.Text == "")
                 return btn20;
 
-            //meunach
+            //Vertical
             if (((btn00.Text == btn10.Text) && (btn10.Text == "X")) && btn20.Text == "")
                 return btn20;
             else
@@ -313,7 +329,7 @@ namespace TicTacToe
             else
                if (((btn22.Text == btn12.Text) && (btn12.Text == "X")) && btn02.Text == "")
                 return btn02;
-            //alachson
+            //Slant
             if (((btn00.Text == btn11.Text) && (btn11.Text == "X")) && btn22.Text == "")
                 return btn22;
             else if (((btn00.Text == btn22.Text) && (btn22.Text == "X")) && btn11.Text == "")
@@ -332,11 +348,13 @@ namespace TicTacToe
             return flag;
         }
         Button Fork()
-        //meuzan
+        //Horizontal
         { 
          if(turns==3)
+			 //The only case a trap can happen
             {
-                //corners
+                //Hard to explain here all types of traps
+				//Promise to explain very clearly in my interview :)
                 if(btn00.Text == "X")
                 {
                     if ((btn21.Text == "X") || (btn22.Text == "X"))
