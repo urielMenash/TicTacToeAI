@@ -1,0 +1,12 @@
+C:\Users\menasheo\Documents\tictactoe\TicTacToe\TicTacToe\TicTacToe\bin\Release\TicTacToe.exe.config
+C:\Users\menasheo\Documents\tictactoe\TicTacToe\TicTacToe\TicTacToe\bin\Release\TicTacToe.exe
+C:\Users\menasheo\Documents\tictactoe\TicTacToe\TicTacToe\TicTacToe\bin\Release\TicTacToe.pdb
+C:\Users\menasheo\Documents\tictactoe\TicTacToe\TicTacToe\TicTacToe\obj\Release\TicTacToe.Form1.resources
+C:\Users\menasheo\Documents\tictactoe\TicTacToe\TicTacToe\TicTacToe\obj\Release\TicTacToe.Properties.Resources.resources
+C:\Users\menasheo\Documents\tictactoe\TicTacToe\TicTacToe\TicTacToe\obj\Release\TicTacToe.singlePlayer.resources
+C:\Users\menasheo\Documents\tictactoe\TicTacToe\TicTacToe\TicTacToe\obj\Release\TicTacToe.csproj.GenerateResource.cache
+C:\Users\menasheo\Documents\tictactoe\TicTacToe\TicTacToe\TicTacToe\obj\Release\TicTacToe.csproj.CoreCompileInputs.cache
+C:\Users\menasheo\Documents\tictactoe\TicTacToe\TicTacToe\TicTacToe\obj\Release\TicTacToe.exe
+C:\Users\menasheo\Documents\tictactoe\TicTacToe\TicTacToe\TicTacToe\obj\Release\TicTacToe.pdb
+C:\Users\123\Downloads\TicTacToe Ready\TicTacToe\TicTacToe\obj\Release\TicTacToe.exe
+C:\Users\123\Downloads\TicTacToe Ready\TicTacToe\TicTacToe\obj\Release\TicTacToe.pdb
